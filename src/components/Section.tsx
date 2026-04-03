@@ -13,11 +13,11 @@ export function Section({ id, children, className = "" }: SectionProps) {
   return (
     <motion.section
       id={id}
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`px-6 py-16 md:py-20 ${className}`}
+      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      className={`px-5 py-10 sm:px-6 sm:py-14 md:py-20 lg:py-28 ${className}`}
     >
       <div className="mx-auto max-w-6xl">{children}</div>
     </motion.section>
@@ -27,8 +27,8 @@ export function Section({ id, children, className = "" }: SectionProps) {
 export function SectionHeading({ children }: { children: ReactNode }) {
   return (
     <div className="mb-3">
-      <div className="mb-4 h-1 w-10 rounded-full bg-teal" />
-      <h2 className="text-2xl font-bold leading-tight tracking-tight md:text-3xl lg:text-4xl">
+      <div className="mb-4 h-1 w-10 rounded-full bg-amber" />
+      <h2 className="text-2xl font-bold leading-tight tracking-tighter md:text-3xl lg:text-4xl">
         {children}
       </h2>
     </div>
@@ -37,7 +37,7 @@ export function SectionHeading({ children }: { children: ReactNode }) {
 
 export function SectionSubheading({ children }: { children: ReactNode }) {
   return (
-    <p className="mb-10 max-w-2xl text-text-muted text-base md:text-lg leading-relaxed">
+    <p className="mb-8 sm:mb-12 max-w-[55ch] text-text-muted text-base md:text-lg leading-relaxed">
       {children}
     </p>
   );

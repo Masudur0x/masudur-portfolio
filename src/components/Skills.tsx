@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const skillCategories = [
   {
     title: "Automation",
-    skills: ["n8n", "Make (Integromat)", "Zapier", "API Integration", "Webhooks"],
+    skills: ["n8n", "Make", "Zapier", "Trigger.dev", "API Integration"],
   },
   {
     title: "AI & LLMs",
@@ -17,41 +17,61 @@ const skillCategories = [
     skills: ["Vapi", "Retell", "Twilio", "Call Routing", "Speech-to-Text"],
   },
   {
-    title: "Integrations",
-    skills: ["Gmail / Outlook", "Slack", "Google Sheets", "CRMs", "Databases"],
+    title: "Web & Apps",
+    skills: ["Next.js", "React", "Tailwind CSS", "Electron", "Claude Code"],
   },
   {
     title: "Infrastructure",
-    skills: ["Docker", "PostgreSQL", "Supabase", "Vercel", "Linux / VPS"],
+    skills: ["Vercel", "Netlify", "Docker", "Supabase", "PostgreSQL"],
+  },
+  {
+    title: "Integrations",
+    skills: ["Gmail / Outlook", "Slack", "Google Sheets", "CRMs", "WhatsApp Bots"],
   },
 ];
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.06 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
 
 export function Skills() {
   return (
     <Section id="skills" className="bg-bg-card/30 section-glow">
       <SectionHeading>Skills & Tools</SectionHeading>
       <SectionSubheading>
-        The stack I use to build production AI systems.
+        The stack I use to build production AI systems — from no-code workflows
+        to full custom applications.
       </SectionSubheading>
 
-      <div className="flex flex-wrap justify-center gap-6">
-        {skillCategories.map((category, i) => (
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+      >
+        {skillCategories.map((category) => (
           <motion.div
             key={category.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.08, duration: 0.5 }}
-            className="w-full rounded-2xl border border-border-card bg-bg-card p-6 sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
+            variants={itemVariants}
+            className="rounded-2xl border border-border-card bg-bg-card p-5 transition-all hover:border-teal/30 hover:shadow-lg hover:shadow-teal/5"
           >
-            <h3 className="mb-4 text-lg font-semibold text-teal">
+            <h3 className="mb-3 text-sm font-semibold text-teal uppercase tracking-wider">
               {category.title}
             </h3>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5">
               {category.skills.map((skill) => (
                 <span
                   key={skill}
-                  className="rounded-lg border border-border-card bg-bg px-3 py-1.5 text-sm text-text transition-colors hover:border-teal/30 hover:text-teal"
+                  className="rounded-md border border-border-card bg-bg px-2.5 py-1 text-xs text-text-muted transition-colors hover:border-teal/30 hover:text-text"
                 >
                   {skill}
                 </span>
@@ -59,7 +79,7 @@ export function Skills() {
             </div>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </Section>
   );
 }

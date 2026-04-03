@@ -50,7 +50,7 @@ export function Navbar() {
             href="https://calendar.app.google/u8anzw3Wr3MC3WTX6"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-lg bg-teal px-4 py-2 text-sm font-medium text-bg transition-colors hover:bg-teal-dark"
+            className="rounded-lg bg-amber px-4 py-2 text-sm font-medium text-bg transition-all hover:bg-amber-dark active:scale-[0.97]"
           >
             Book a Call
           </a>
@@ -106,7 +106,7 @@ export function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
-                className="rounded-lg bg-teal px-6 py-3 text-lg font-medium text-bg transition-colors hover:bg-teal-dark"
+                className="rounded-lg bg-amber px-6 py-3 text-lg font-medium text-bg transition-all hover:bg-amber-dark active:scale-[0.97]"
               >
                 Book a Call
               </a>

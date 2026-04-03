@@ -1,14 +1,4 @@
-import { FaYoutube, FaLinkedinIn, FaGithub, FaEnvelope, FaFacebookF, FaWhatsapp, FaPeopleGroup } from "react-icons/fa6";
-
-const socialLinks = [
-  { href: "https://www.youtube.com/@IamMasudurRahman", icon: FaYoutube, label: "YouTube", color: "#FF0000" },
-  { href: "https://linkedin.com/in/masudur-rahman0a", icon: FaLinkedinIn, label: "LinkedIn", color: "#0A66C2" },
-  { href: "https://web.facebook.com/masudurrahmanai", icon: FaFacebookF, label: "Facebook", color: "#1877F2" },
-  { href: "https://web.facebook.com/share/g/1HLfiAUTxF/", icon: FaPeopleGroup, label: "Community", color: "#1877F2" },
-
-  { href: "https://github.com/masudur", icon: FaGithub, label: "GitHub", color: "#8B5CF6" },
-  { href: "mailto:masudurrahman0e@gmail.com", icon: FaEnvelope, label: "Email", color: "#14B8A6" },
-];
+import { socialLinks } from "@/lib/socials";
 
 const footerLinks = [
   { href: "#about", label: "About" },
@@ -34,31 +24,33 @@ export function Footer() {
             </p>
           </div>
 
-          <div className="flex gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {footerLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-text-muted transition-colors hover:text-teal"
+                className="text-sm text-text-muted transition-colors hover:text-text"
               >
                 {link.label}
               </a>
             ))}
           </div>
 
-          <div className="flex flex-wrap justify-center gap-4">
-            {socialLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={link.label}
-                className="flex h-10 w-10 items-center justify-center rounded-lg border border-border-card text-text-muted transition-all hover:border-teal hover:text-teal"
-              >
-                <link.icon size={18} style={{ color: link.color }} />
-              </a>
-            ))}
+          <div className="grid grid-cols-3 gap-3 sm:flex sm:flex-wrap sm:justify-center sm:gap-4">
+            {socialLinks
+              .filter((l) => l.label !== "WhatsApp")
+              .map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.label}
+                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-border-card text-text-muted transition-all hover:border-teal/40 hover:text-text active:scale-95 mx-auto sm:mx-0"
+                >
+                  <link.icon size={18} />
+                </a>
+              ))}
           </div>
         </div>
 

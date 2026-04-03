@@ -2,7 +2,12 @@
 
 import { Section, SectionHeading, SectionSubheading } from "./Section";
 import { motion } from "framer-motion";
-import { HiOutlineCog8Tooth, HiOutlineMicrophone, HiOutlineCpuChip, HiOutlineLightBulb } from "react-icons/hi2";
+import {
+  HiOutlineCog8Tooth,
+  HiOutlineMicrophone,
+  HiOutlineCpuChip,
+  HiOutlineLightBulb,
+} from "react-icons/hi2";
 
 const services = [
   {
@@ -35,6 +40,22 @@ const services = [
   },
 ];
 
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.1 },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 25 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const },
+  },
+};
+
 export function Services() {
   return (
     <Section id="services" className="bg-bg-card/30 section-glow">
@@ -43,15 +64,18 @@ export function Services() {
         AI systems that save real time and real money. No fluff, just results.
       </SectionSubheading>
 
-      <div className="grid gap-6 sm:grid-cols-2">
-        {services.map((service, i) => (
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="grid gap-6 sm:grid-cols-2"
+      >
+        {services.map((service) => (
           <motion.div
             key={service.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1, duration: 0.5 }}
-            className="group rounded-2xl border border-border-card bg-bg-card p-8 transition-all hover:border-teal/40 hover:shadow-lg hover:shadow-teal/5"
+            variants={cardVariants}
+            className="group rounded-2xl border border-border-card bg-bg-card p-5 sm:p-8 transition-all hover:border-teal/30 hover:shadow-lg hover:shadow-teal/5 active:scale-[0.99]"
           >
             <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-teal/10">
               <service.icon className="h-7 w-7 text-teal" />
@@ -64,7 +88,7 @@ export function Services() {
               {service.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full bg-teal/10 px-3 py-1 text-xs font-medium text-teal"
+                  className="rounded-full border border-border-card bg-bg px-3 py-1 text-xs font-medium text-text-muted"
                 >
                   {tag}
                 </span>
@@ -72,7 +96,7 @@ export function Services() {
             </div>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </Section>
   );
 }

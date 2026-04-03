@@ -2,6 +2,7 @@
 
 import { Section, SectionHeading, SectionSubheading } from "./Section";
 import { FaYoutube } from "react-icons/fa6";
+import { motion } from "framer-motion";
 
 export function YouTube() {
   return (
@@ -12,32 +13,32 @@ export function YouTube() {
         to learn how I build these systems.
       </SectionSubheading>
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {/* Placeholder video cards — will be replaced with real embeds */}
-        {[1, 2, 3].map((n) => (
-          <div
-            key={n}
-            className="group flex aspect-video items-center justify-center rounded-2xl border border-border-card bg-bg-card transition-all hover:border-teal/40"
-          >
-            <div className="text-center text-text-muted">
-              <FaYoutube className="mx-auto mb-2 h-12 w-12 opacity-40" />
-              <p className="text-sm">Video {n} Coming Soon</p>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-8 text-center">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        className="mx-auto max-w-xl rounded-2xl border border-border-card bg-bg-card/60 p-10 text-center"
+      >
+        <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-red-500/10">
+          <FaYoutube className="h-8 w-8 text-red-400" />
+        </div>
+        <h3 className="mb-2 text-lg font-semibold">Videos dropping soon</h3>
+        <p className="mb-6 text-sm text-text-muted leading-relaxed">
+          Workflow breakdowns, voice AI builds, and behind-the-scenes of
+          production automation systems. Subscribe so you don&apos;t miss the first
+          drop.
+        </p>
         <a
           href="https://www.youtube.com/@IamMasudurRahman"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-lg border border-red-500/30 bg-red-500/10 px-6 py-3 font-medium text-red-400 transition-colors hover:bg-red-500/20"
+          className="inline-flex items-center gap-2 rounded-lg bg-red-500/15 px-6 py-3 font-medium text-red-400 transition-all hover:bg-red-500/25 active:scale-[0.98]"
         >
           <FaYoutube className="h-5 w-5" />
           Subscribe on YouTube
         </a>
-      </div>
+      </motion.div>
     </Section>
   );
 }

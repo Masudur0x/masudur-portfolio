@@ -7,7 +7,6 @@ export function WhatsAppFloat() {
   const [showTooltip, setShowTooltip] = useState(false);
   const [hasInteracted, setHasInteracted] = useState(false);
 
-  // Auto-show tooltip briefly after 3 seconds on first load
   useEffect(() => {
     const timer = setTimeout(() => {
       if (!hasInteracted) {
@@ -38,14 +37,19 @@ export function WhatsAppFloat() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
-        onMouseEnter={() => { setShowTooltip(true); setHasInteracted(true); }}
+        onMouseEnter={() => {
+          setShowTooltip(true);
+          setHasInteracted(true);
+        }}
         onMouseLeave={() => setShowTooltip(false)}
-        onTouchStart={() => { setShowTooltip(true); setHasInteracted(true); }}
-        className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform duration-200 hover:scale-110 active:scale-95"
+        onTouchStart={() => {
+          setShowTooltip(true);
+          setHasInteracted(true);
+        }}
+        className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-[#25D366]/20 transition-transform duration-200 hover:scale-110 active:scale-95"
       >
-        {/* Pulse rings */}
-        <span className="absolute inset-0 animate-ping rounded-full bg-[#25D366] opacity-20" />
-        <span className="absolute inset-[-4px] animate-pulse rounded-full border-2 border-[#25D366]/40" />
+        {/* Subtle breathing ring instead of aggressive ping */}
+        <span className="absolute inset-[-3px] animate-pulse rounded-full border border-[#25D366]/30" />
 
         <FaWhatsapp size={28} className="relative z-10" />
       </a>
