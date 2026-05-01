@@ -1,18 +1,15 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
+import { PERSONA } from "@/lib/persona";
+import { LanguageSwitcher } from "./LanguageSwitcher";
+import { ThemeToggle } from "./ThemeToggle";
 
-const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#services", label: "Services" },
-  { href: "#projects", label: "Projects" },
-  { href: "#skills", label: "Skills" },
-  { href: "#youtube", label: "YouTube" },
-  { href: "#contact", label: "Contact" },
-];
+const navKeys = ["about", "services", "projects", "skills", "youtube", "faqs", "contact"] as const;
 
 export function Navbar() {
+  const t = useTranslations("nav");
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -21,6 +18,8 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const links = navKeys.map((k) => ({ href: `#${k}`, label: t(k) }));
 
   return (
     <header
@@ -36,8 +35,8 @@ export function Navbar() {
         </a>
 
         {/* Desktop nav */}
-        <div className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) => (
+        <div className="hidden items-center gap-6 md:flex">
+          {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
@@ -46,13 +45,17 @@ export function Navbar() {
               {link.label}
             </a>
           ))}
+          <div className="flex items-center gap-2 border-l border-border-card pl-4">
+            <LanguageSwitcher />
+            <ThemeToggle />
+          </div>
           <a
-            href="https://calendar.app.google/u8anzw3Wr3MC3WTX6"
+            href={PERSONA.contact.calendar}
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-lg bg-amber px-4 py-2 text-sm font-medium text-bg transition-all hover:bg-amber-dark active:scale-[0.97]"
           >
-            Book a Call
+            {t("bookCall")}
           </a>
         </div>
 
@@ -60,7 +63,7 @@ export function Navbar() {
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="relative z-50 flex h-10 w-10 items-center justify-center md:hidden"
-          aria-label="Toggle menu"
+          aria-label={isOpen ? t("closeMenu") : t("openMenu")}
         >
           <div className="flex flex-col gap-1.5">
             <span
@@ -81,38 +84,37 @@ export function Navbar() {
           </div>
         </button>
 
-        {/* Mobile drawer */}
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ type: "tween", duration: 0.3 }}
-              className="fixed inset-0 top-0 z-40 flex flex-col items-center justify-center gap-8 bg-bg/95 backdrop-blur-xl md:hidden"
+        {/* Mobile drawer — CSS-only slide */}
+        <div
+          aria-hidden={!isOpen}
+          className={`fixed inset-0 top-0 z-40 flex flex-col items-center justify-center gap-6 bg-bg/95 backdrop-blur-xl transition-transform duration-300 ease-out md:hidden ${
+            isOpen ? "translate-x-0" : "translate-x-full pointer-events-none"
+          }`}
+        >
+          {links.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setIsOpen(false)}
+              className="text-2xl font-medium text-text-muted transition-colors hover:text-teal"
             >
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-2xl font-medium text-text-muted transition-colors hover:text-teal"
-                >
-                  {link.label}
-                </a>
-              ))}
-              <a
-                href="https://calendar.app.google/u8anzw3Wr3MC3WTX6"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setIsOpen(false)}
-                className="rounded-lg bg-amber px-6 py-3 text-lg font-medium text-bg transition-all hover:bg-amber-dark active:scale-[0.97]"
-              >
-                Book a Call
-              </a>
-            </motion.div>
-          )}
-        </AnimatePresence>
+              {link.label}
+            </a>
+          ))}
+          <div className="mt-2 flex items-center gap-3">
+            <LanguageSwitcher />
+            <ThemeToggle />
+          </div>
+          <a
+            href={PERSONA.contact.calendar}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setIsOpen(false)}
+            className="rounded-lg bg-amber px-6 py-3 text-lg font-medium text-bg transition-all hover:bg-amber-dark active:scale-[0.97]"
+          >
+            {t("bookCall")}
+          </a>
+        </div>
       </nav>
     </header>
   );

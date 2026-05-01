@@ -1,0 +1,335 @@
+{
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "projects": "Projects",
+    "skills": "Skills",
+    "youtube": "YouTube",
+    "faqs": "FAQ",
+    "contact": "Contact",
+    "bookCall": "Book a Call",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "hero": {
+    "headlineLead": "24/7 AI that handles",
+    "headlineCue": "every",
+    "headlineTrail": "",
+    "typing": ["call", "lead", "booking", "deal"],
+    "subheadDesktop": "From intelligent workflow automation to voice AI agents, I help businesses automate what slows them down so they can focus on what matters.",
+    "subheadMobile": "I help businesses automate what slows them down — from workflow automation to voice AI agents.",
+    "talkLive": "Talk to my AI · Live",
+    "bookCall": "Book a Call",
+    "seeWork": "See My Work",
+    "headshotAlt": "Masudur Rahman"
+  },
+  "marquee": {
+    "label": "What You Get",
+    "items": [
+      "Fully Managed Hosting",
+      "Build & Hand Over",
+      "14-Day Care After Launch",
+      "Free Discovery Call",
+      "50/50 Payment Split",
+      "Under Two Weeks",
+      "AI Strategy Consultation",
+      "24/7 Voice Receptionists",
+      "n8n Workflow Automation",
+      "Custom TypeScript Code",
+      "Privacy-First by Default",
+      "Production-Grade, Not Demo-Ware"
+    ]
+  },
+  "about": {
+    "kicker": "Who I Am",
+    "shortBio": "AI Automation Expert building voice agents, n8n workflows, and Claude-Code engineered systems that replace repetitive work — for clients in Finland, Sweden, and beyond.",
+    "highlights": [
+      "CTO & Partner at Wicflow (Finland)",
+      "Production AI systems processing thousands of tasks daily",
+      "Clients across Finland, Sweden, and globally"
+    ],
+    "stats": {
+      "automations": "Automations Built",
+      "countries": "Countries Served",
+      "hours": "Hours Saved for Clients"
+    },
+    "currentlyAt": "Currently building at",
+    "workWithMe": "Work With Me"
+  },
+  "services": {
+    "heading": "What I Build",
+    "subheading": "AI systems that save real time and real money. No fluff, just results.",
+    "items": {
+      "voice-ai": {
+        "title": "Voice AI Agents (24/7 receptionist & sales)",
+        "description": "Retell and Vapi agents that book calls, qualify leads, and answer FAQs in your customers' language. Replaces a phone team — never sleeps, never has a bad day."
+      },
+      "custom-automation": {
+        "title": "Custom AI Automation (Claude-Code engineered)",
+        "description": "Bespoke automations written as real codebases — not just no-code. Fully owned by you, deployable to your own infrastructure, easy to extend as your business grows."
+      },
+      "n8n-make": {
+        "title": "n8n / Make Workflow Systems",
+        "description": "Production-grade workflows that connect 100+ tools — CRM, email, billing, AI — and run unattended. From inbox triage to multi-step data pipelines."
+      },
+      "strategy": {
+        "title": "AI Strategy & Build-with-You",
+        "description": "One sprint together: audit your ops, identify the 3 highest-ROI automations, build them, hand over docs. Walk out owning your stack — not renting it."
+      }
+    }
+  },
+  "projects": {
+    "heading": "What Happened When I Turned the AI On",
+    "subheading": "Real systems running in production for real businesses.",
+    "seeAll": "See All Projects",
+    "labels": {
+      "problem": "Problem:",
+      "solution": "Solution:",
+      "results": "Results:"
+    },
+    "allTitle": "All Projects",
+    "allDescription": "Every AI system I've built for real businesses. Production workflows, voice agents, and automation that runs daily.",
+    "backHome": "← Back home",
+    "metaTitle": "Projects | Masudur Rahman",
+    "metaDescription": "Real AI automation systems running in production. Case studies from businesses in Finland, Sweden, and globally.",
+    "items": {
+      "scalling-school-email": {
+        "title": "AI Email Automation",
+        "client": "Scalling School, Finland",
+        "industry": "Education / Online Business",
+        "metric": "Hours saved daily",
+        "problem": "Spending hours manually reading, categorizing, and replying to emails. Important messages were getting buried.",
+        "solution": "Built an n8n workflow with AI email classification, knowledge base integration, conversation history tracking, and automated draft generation that sounds human.",
+        "results": [
+          "Inbox fully organized automatically",
+          "Human-sounding drafts ready to review and send",
+          "Hours of daily email work eliminated"
+        ]
+      },
+      "hvac-quote-system": {
+        "title": "Intelligent Quote System",
+        "client": "HVAC Company, Finland",
+        "industry": "HVAC / Manufacturing",
+        "metric": "Employee workload replaced",
+        "problem": "Complex email handling with attachments (images, PDFs, Excel, Word), pricing calculations, and parts catalog lookups taking up one full employee's time.",
+        "solution": "Designed a production n8n workflow handling multi-format attachments, custom pricing rules, parts catalog integration, calculation tools, and full conversation history.",
+        "results": [
+          "Effectively replaced one employee's workload",
+          "Handles complex attachments automatically",
+          "Running in production, processing daily"
+        ]
+      },
+      "proflow-plumbing-voice-ai": {
+        "title": "24/7 Voice Receptionist for a Plumbing Company",
+        "client": "ProFlow Plumbing",
+        "industry": "Home Services / Plumbing",
+        "metric": "Missed calls recovered",
+        "problem": "Like most small plumbing businesses, ProFlow was losing real revenue every time the owner couldn't pick up — on a job, on another call, after hours. Every missed call was a customer calling the next plumber on Google.",
+        "solution": "Built a Retell voice AI receptionist with a Twilio failover: the company number rings the owner's phone for 15 seconds first; if he doesn't pick up, the call routes to the AI. The agent answers business questions from a knowledge base (pricing, service area, hours), and for bookings it calls an n8n workflow that checks the calendar in real time. If the requested slot is free it books and confirms; if not, it offers the 3 closest available times. On confirmation, n8n creates the calendar event, emails the owner, and updates the CRM.",
+        "results": [
+          "Owner never loses a lead to an unanswered phone again",
+          "Real-time availability check + booking in a single call",
+          "Auto email-to-owner + CRM update on every booking"
+        ]
+      },
+      "lead-intake-followup-engine": {
+        "title": "Lead Intake & Personalized Follow-up Engine",
+        "client": "Service Business Owner",
+        "industry": "Sales / Lead Generation",
+        "metric": "Hands-off follow-up touches per lead",
+        "problem": "Leads were coming in from websites and forms but slipping through the cracks. The owner didn't have time to write personal follow-ups, duplicates were polluting the CRM, and prospects were going cold while waiting for a response.",
+        "solution": "Built a 3-workflow n8n system. Workflow 1 (Intake): captures leads from any site or form, dedupes against the CRM, then an AI agent writes a 2-sentence personalized profile (name, company, interest, notes), pushes the row into a Google Sheet CRM, emails the owner, and confirms back to the prospect. Workflow 2 (Follow-up Engine): runs a 4-step cadence per lead — greeting on day 0, then day 1, day 3, and day 8 — each message AI-written so it reads like the owner typed it. If the lead replies at any step, follow-ups auto-pause until the owner re-enables them. After 4 unanswered touches, the sequence stops cleanly. Workflow 3 (Owner Actions): lets the owner manually trigger or reschedule a workflow on demand for any lead — full control without waiting for the next cron.",
+        "results": [
+          "Zero leads lost to duplicates or slow response time",
+          "4 personalized touches per lead, fully unattended",
+          "Auto-pause on reply + manual override give the owner a real CRM, not a spreadsheet"
+        ]
+      },
+      "claude-executive-assistant": {
+        "title": "Claude-Powered Social Media Executive Assistant",
+        "client": "Solo Founder / Personal Brand",
+        "industry": "Content / Personal Branding",
+        "metric": "Platforms managed end-to-end",
+        "problem": "A busy founder needed to stay active on two Facebook pages, Instagram, and LinkedIn — but content research, post design, and scheduling were eating hours every week. Most AI tools spit out generic copy; nothing handled the full loop from idea to published post.",
+        "solution": "Built a Claude project that runs as a real executive assistant. The owner gives it a topic — or asks it to research what's currently trending in a niche (AI, video editing, anything) — and Claude returns a curated short-list to choose from. Once a topic is picked, it does a second deep-research pass, presents the angle, and asks how to format it: carousel or text + image. It generates the full post (visuals included), and on approval auto-publishes to both Facebook pages, Instagram, and LinkedIn. Same project also drafts YouTube video plans and generates banners.",
+        "results": [
+          "Two-step research loop produces post-ready ideas without generic AI fluff",
+          "Carousels, image posts, and YouTube banners generated in-flow",
+          "One approval → auto-publishes to 4 social channels at once"
+        ]
+      }
+    }
+  },
+  "skills": {
+    "heading": "Skills & Tools",
+    "subheading": "The stack I use to build production AI systems — from no-code workflows to full custom applications.",
+    "categories": {
+      "automation": "Automation",
+      "ai": "AI & LLMs",
+      "voice": "Voice AI",
+      "web": "Web & Apps",
+      "infra": "Infrastructure",
+      "integrations": "Integrations"
+    }
+  },
+  "youtube": {
+    "heading": "Watch Me Build",
+    "subheading": "I share tutorials, builds, and AI automation tips on YouTube. Subscribe to learn how I build these systems.",
+    "comingSoonTitle": "Videos dropping soon",
+    "comingSoonBody": "Workflow breakdowns, voice AI builds, and behind-the-scenes of production automation systems. Subscribe so you don't miss the first drop.",
+    "subscribe": "Subscribe on YouTube"
+  },
+  "faqs": {
+    "heading": "Common Questions",
+    "subheading": "The things business owners actually ask before we start working together. If yours isn't here, message my AI on the chat or book a free call.",
+    "items": [
+      {
+        "q": "What kind of automations do you actually build?",
+        "a": "Voice AI receptionists (especially for service businesses like plumbing, HVAC, dental, salons — so you never miss a call again). CRM automation including Go High Level and similar systems. Lead follow-up sequences, table and meeting booking automation, social media posting, Gmail and Outlook automation, WhatsApp bots, website chatbots, and end-to-end workflows that connect all your tools together. If you do something repetitive every day, it can probably be automated."
+      },
+      {
+        "q": "How much does it cost — and how do payments work?",
+        "a": "Price depends on the project; you'll get a clear number on a free 30-minute call. Payment is split 50 / 50: you pay 50% when we start, the remaining 50% when the system is delivered and working. No surprise invoices, no hidden fees. For ongoing managed systems (see below) there's a one-time setup fee plus a small monthly amount."
+      },
+      {
+        "q": "Which engagement model fits me?",
+        "a": "Three options — pick whichever feels right.\n\n1) Fully managed — I host everything, monitor it, fix anything that breaks. You pay a setup fee + a monthly amount and just use the benefit. Best if you don't want to think about the tech at all.\n\n2) Build and hand over — I build the system, deliver it, and you handle hosting and maintenance going forward. Best if you have an in-house IT team or want full ownership.\n\n3) Build, integrate, and 14-day care — I build it, integrate it into your side, and watch it for 14 days after delivery. Anything that breaks in those 14 days I fix free. After that, you own it. Best for businesses that want a clean handoff with a safety net."
+      },
+      {
+        "q": "How long does a project take?",
+        "a": "It depends on the project — a real estimate needs a quick call. As a guide: a normal automation is usually live in around 3 days. A complex one (multi-step workflow, multiple integrations, voice agent with custom logic) is typically 7–10 days. Most things are done in under two weeks. If your project is bigger, I'll tell you straight on the discovery call instead of guessing here."
+      },
+      {
+        "q": "Is my data and my customers' data safe?",
+        "a": "Privacy is the most important part. Your data stays in your accounts and your tools — I don't keep copies. For voice and chat, I configure providers so call recordings and transcripts can be deleted on a schedule you choose. Sensitive details (customer info, payment data, internal docs) never go into a public AI without your explicit decision. Anything that touches a specific customer workflow we discuss directly on a call so the setup matches your privacy needs exactly."
+      },
+      {
+        "q": "Do you build with no-code tools or real code?",
+        "a": "Both, depending on what fits. Simple to medium automations are built fast and cleanly with n8n, Make, Cal.com, Retell, or Vapi — same tools used by big production teams, easy to extend later. Complex or business-critical systems I build as real code (Claude-Code engineered TypeScript/Node), so they're fast, reliable, and not locked to any platform. You get the right tool for the job, not a one-size-fits-all answer."
+      },
+      {
+        "q": "I run a service business and miss calls — can a voice AI really replace that?",
+        "a": "Yes — this is one of my core builds. The voice agent answers 24/7, sounds natural, captures the customer's name, address, and what they need, and either books the job into your calendar or texts you the lead immediately. For plumbing, HVAC, electrical, dental, and similar businesses, every missed call is lost revenue — this is usually the highest-ROI automation I ship."
+      },
+      {
+        "q": "How do we start?",
+        "a": "Book a free discovery call from the button below — about 30 minutes. We talk through what's slowing your business down, I tell you honestly whether automation will help and what it will cost, and you decide. No pitch deck, no pressure."
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Let's Build Something Together",
+    "subheading": "Got a business process that needs automating? An AI idea you want to bring to life? Let's talk.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@example.com",
+    "projectLabel": "Tell me about your project",
+    "projectPlaceholder": "What do you want to automate?",
+    "budgetLabel": "Budget Range",
+    "budgetSelect": "Select a range",
+    "budgetUnder1k": "Under $1,000",
+    "budget1to5k": "$1,000 - $5,000",
+    "budget5to10k": "$5,000 - $10,000",
+    "budget10kPlus": "$10,000+",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "successTitle": "Message received",
+    "successBody": "Thanks for reaching out — I'll review your project and reply directly to your email within a few hours on weekdays.",
+    "successAgain": "Send another",
+    "error": "Something went wrong. Try again or reach out directly via WhatsApp.",
+    "responseTitle": "What happens next",
+    "responseBody": "I personally read every message. You'll usually hear back within a few hours on a weekday.",
+    "directTitle": "Need it faster?",
+    "directBody": "WhatsApp or email is the quickest way to reach me directly.",
+    "whatsappLabel": "WhatsApp",
+    "bookCallLabel": "Book a call",
+    "findOnline": "Find me online"
+  },
+  "footer": {
+    "tagline": "AI automation for businesses that want to move faster.",
+    "available": "Available for new projects",
+    "servicesHeading": "What I Build",
+    "exploreHeading": "Explore",
+    "connectHeading": "Connect",
+    "service1": "Voice AI Agents",
+    "service2": "Workflow Automation",
+    "service3": "Custom AI Systems",
+    "service4": "Chatbots & Assistants",
+    "service5": "AI Strategy",
+    "rightsReserved": "All rights reserved.",
+    "builtWith": "Engineered with Claude Code",
+    "bookCallCta": "Book a discovery call"
+  },
+  "preFooter": {
+    "headline": "Ready to automate the busywork?",
+    "sub": "Free 20-minute discovery call. We figure out if it's a fit and what the highest-ROI first build looks like — no pitch deck, no commitment.",
+    "cta": "Book a discovery call"
+  },
+  "contactHub": {
+    "open": "Talk to my AI",
+    "close": "Close",
+    "openMenuAria": "Talk to my AI — open contact menu",
+    "closeMenuAria": "Close contact menu",
+    "talkLive": "Talk live",
+    "talkLiveHint": "Voice AI · 1 min",
+    "chat": "Chat",
+    "chatHint": "Type a question",
+    "whatsapp": "WhatsApp",
+    "whatsappHint": "Direct to Masudur"
+  },
+  "chat": {
+    "title": "Masudur's AI",
+    "subtitle": "Usually replies instantly",
+    "greeting": "Hey, I'm Masudur's AI — ask me anything about voice agents, n8n, pricing, or how he'd approach your problem.",
+    "suggested": [
+      "How much for a voice agent?",
+      "Show me a case study",
+      "Book a call"
+    ],
+    "inputPlaceholder": "Ask anything…",
+    "sendAria": "Send message",
+    "resetAria": "Reset conversation",
+    "closeAria": "Close chat",
+    "leadIntro": "Want Masudur to follow up? Drop your name and email — I'll send him the conversation.",
+    "leadNamePlaceholder": "Your name",
+    "leadEmailPlaceholder": "you@company.com",
+    "notNow": "Not now",
+    "leadSend": "Send to Masudur",
+    "leadSending": "Sending…",
+    "leadSent": "Thanks — Masudur will reach out from his inbox shortly.",
+    "errorFallback": "Sorry — I hit a snag reaching the model. Try again, or use the Contact section to reach Masudur directly."
+  },
+  "voice": {
+    "title": "Live with Masudur's AI",
+    "ready": "Ready",
+    "connecting": "Connecting…",
+    "connectingBody": "Connecting… your browser may ask for microphone access.",
+    "live": "Connected · speak naturally",
+    "ended": "Call ended",
+    "endedBody": "Call ended. Masudur will see the summary in his inbox.",
+    "error": "Something went wrong",
+    "agentLabel": "Assistant · ",
+    "youLabel": "You · ",
+    "listening": "Listening…",
+    "tryAgain": "Try again",
+    "muteAria": "Mute",
+    "unmuteAria": "Unmute",
+    "endCallAria": "End call",
+    "closeAria": "Close call",
+    "micBlocked": "Microphone access was blocked. Enable it in your browser settings and try again."
+  },
+  "language": {
+    "english": "English",
+    "bangla": "বাংলা",
+    "more": "More languages",
+    "moreSub": "via Google Translate",
+    "switchAria": "Switch language"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "toggleAria": "Toggle theme"
+  }
+}

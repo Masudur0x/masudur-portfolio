@@ -1,31 +1,47 @@
 @import "tailwindcss";
+@import "../styles/tokens.css";
 
 @theme inline {
-  --color-bg: #0a0a0f;
-  --color-bg-card: #1a1a2e;
-  --color-border-card: #2a2a4a;
-  --color-text: #e2e8f0;
-  --color-text-muted: #94a3b8;
-  --color-teal: #06b6d4;
-  --color-teal-dark: #0891b2;
-  --color-amber: #f59e0b;
-  --color-amber-dark: #d97706;
+  --color-bg: var(--token-bg);
+  --color-bg-card: var(--token-bg-card);
+  --color-border-card: var(--token-border-card);
+  --color-text: var(--token-text);
+  --color-text-muted: var(--token-text-muted);
+  --color-text-strong: var(--token-text-strong);
+  --color-teal: var(--token-teal);
+  --color-teal-dark: var(--token-teal-dark);
+  --color-amber: var(--token-amber);
+  --color-amber-dark: var(--token-amber-dark);
 
   --font-heading: var(--font-plus-jakarta);
   --font-body: var(--font-geist);
+  --font-bangla: var(--font-bangla);
 }
 
 body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
+  background-color: var(--token-bg);
+  color: var(--token-text);
   font-family: var(--font-body), system-ui, sans-serif;
   font-size: 16px;
   line-height: 1.6;
 }
 
+html[lang="bn"] body {
+  font-family: var(--font-bangla), var(--font-body), system-ui, sans-serif;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading), system-ui, sans-serif;
   line-height: 1.15;
+}
+
+html[lang="bn"] h1,
+html[lang="bn"] h2,
+html[lang="bn"] h3,
+html[lang="bn"] h4,
+html[lang="bn"] h5,
+html[lang="bn"] h6 {
+  font-family: var(--font-bangla), var(--font-heading), system-ui, sans-serif;
 }
 
 html {
@@ -37,14 +53,14 @@ html {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-bg);
+  background: var(--token-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-border-card);
+  background: var(--token-border-card);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-text-muted);
+  background: var(--token-text-muted);
 }
 
 /* Cursor blink */
@@ -58,8 +74,8 @@ html {
 
 /* Selection */
 ::selection {
-  background-color: #06b6d440;
-  color: #e2e8f0;
+  background-color: var(--token-selection-bg);
+  color: var(--token-text);
 }
 
 /* Section accent backgrounds */
@@ -70,7 +86,7 @@ html {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 80% 50% at 50% 0%, #06b6d40a 0%, transparent 70%);
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, var(--token-section-glow) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -82,6 +98,7 @@ html {
   right: 10%;
   top: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #2a2a4a60, transparent);
+  background: linear-gradient(90deg, transparent, var(--token-section-rule), transparent);
   pointer-events: none;
 }
+

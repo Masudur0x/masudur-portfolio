@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
 interface SectionProps {
@@ -11,16 +8,12 @@ interface SectionProps {
 
 export function Section({ id, children, className = "" }: SectionProps) {
   return (
-    <motion.section
+    <section
       id={id}
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
       className={`px-5 py-10 sm:px-6 sm:py-14 md:py-20 lg:py-28 ${className}`}
     >
       <div className="mx-auto max-w-6xl">{children}</div>
-    </motion.section>
+    </section>
   );
 }
 

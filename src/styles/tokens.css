@@ -1,0 +1,47 @@
+/*
+ * Design tokens — single source for color, motion, and surface values.
+ * Two palettes are defined: dark (default) and light. next-themes flips
+ * the [data-theme] attribute on <html>, swapping the variables below.
+ *
+ * Brand accents (teal + amber) are kept consistent across themes; only
+ * surfaces and typography adapt.
+ */
+
+:root,
+[data-theme="dark"] {
+  --token-bg: #0a0a0f;
+  --token-bg-card: #1a1a2e;
+  --token-border-card: #2a2a4a;
+  --token-text: #e2e8f0;
+  --token-text-muted: #94a3b8;
+  --token-text-strong: #ffffff;
+
+  --token-teal: #06b6d4;
+  --token-teal-dark: #0891b2;
+  --token-amber: #f59e0b;
+  --token-amber-dark: #d97706;
+
+  --token-selection-bg: rgba(6, 182, 212, 0.25);
+  --token-section-glow: rgba(6, 182, 212, 0.04);
+  --token-section-rule: rgba(42, 42, 74, 0.38);
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  --token-bg: #fafaf7;
+  --token-bg-card: #ffffff;
+  --token-border-card: #e7e5e0;
+  --token-text: #1c1917;
+  --token-text-muted: #57534e;
+  --token-text-strong: #0c0a09;
+
+  --token-teal: #0e7490;
+  --token-teal-dark: #155e75;
+  --token-amber: #b45309;
+  --token-amber-dark: #92400e;
+
+  --token-selection-bg: rgba(14, 116, 144, 0.18);
+  --token-section-glow: rgba(14, 116, 144, 0.05);
+  --token-section-rule: rgba(231, 229, 224, 0.9);
+  color-scheme: light;
+}

@@ -1,71 +1,51 @@
 "use client";
 
 import { Section, SectionHeading, SectionSubheading } from "./Section";
-import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const skillCategories = [
   {
-    title: "Automation",
+    key: "automation",
     skills: ["n8n", "Make", "Zapier", "Trigger.dev", "API Integration"],
   },
   {
-    title: "AI & LLMs",
+    key: "ai",
     skills: ["Claude", "OpenAI / GPT", "LangChain", "Prompt Engineering", "RAG Systems"],
   },
   {
-    title: "Voice AI",
+    key: "voice",
     skills: ["Vapi", "Retell", "Twilio", "Call Routing", "Speech-to-Text"],
   },
   {
-    title: "Web & Apps",
+    key: "web",
     skills: ["Next.js", "React", "Tailwind CSS", "Electron", "Claude Code"],
   },
   {
-    title: "Infrastructure",
+    key: "infra",
     skills: ["Vercel", "Netlify", "Docker", "Supabase", "PostgreSQL"],
   },
   {
-    title: "Integrations",
+    key: "integrations",
     skills: ["Gmail / Outlook", "Slack", "Google Sheets", "CRMs", "WhatsApp Bots"],
   },
-];
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.06 },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
+] as const;
 
 export function Skills() {
+  const t = useTranslations("skills");
+
   return (
     <Section id="skills" className="bg-bg-card/30 section-glow">
-      <SectionHeading>Skills & Tools</SectionHeading>
-      <SectionSubheading>
-        The stack I use to build production AI systems — from no-code workflows
-        to full custom applications.
-      </SectionSubheading>
+      <SectionHeading>{t("heading")}</SectionHeading>
+      <SectionSubheading>{t("subheading")}</SectionSubheading>
 
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
-      >
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {skillCategories.map((category) => (
-          <motion.div
-            key={category.title}
-            variants={itemVariants}
+          <div
+            key={category.key}
             className="rounded-2xl border border-border-card bg-bg-card p-5 transition-all hover:border-teal/30 hover:shadow-lg hover:shadow-teal/5"
           >
             <h3 className="mb-3 text-sm font-semibold text-teal uppercase tracking-wider">
-              {category.title}
+              {t(`categories.${category.key}`)}
             </h3>
             <div className="flex flex-wrap gap-1.5">
               {category.skills.map((skill) => (
@@ -77,9 +57,9 @@ export function Skills() {
                 </span>
               ))}
             </div>
-          </motion.div>
+          </div>
         ))}
-      </motion.div>
+      </div>
     </Section>
   );
 }

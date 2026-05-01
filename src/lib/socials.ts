@@ -7,41 +7,27 @@ import {
   FaWhatsapp,
   FaPeopleGroup,
 } from "react-icons/fa6";
+import type { IconType } from "react-icons";
+import { PERSONA, type PersonaSocial } from "./persona";
 
-export const socialLinks = [
-  {
-    href: "https://www.youtube.com/@IamMasudurRahman",
-    icon: FaYoutube,
-    label: "YouTube",
-  },
-  {
-    href: "https://linkedin.com/in/masudur-rahman0a",
-    icon: FaLinkedinIn,
-    label: "LinkedIn",
-  },
-  {
-    href: "https://web.facebook.com/masudurrahmanai",
-    icon: FaFacebookF,
-    label: "Facebook",
-  },
-  {
-    href: "https://web.facebook.com/share/g/1HLfiAUTxF/",
-    icon: FaPeopleGroup,
-    label: "Community",
-  },
-  {
-    href: "https://wa.link/cnj2nn",
-    icon: FaWhatsapp,
-    label: "WhatsApp",
-  },
-  {
-    href: "https://github.com/masudur",
-    icon: FaGithub,
-    label: "GitHub",
-  },
-  {
-    href: "mailto:masudurrahman0e@gmail.com",
-    icon: FaEnvelope,
-    label: "Email",
-  },
-];
+const ICONS: Record<PersonaSocial["icon"], IconType> = {
+  FaYoutube,
+  FaLinkedinIn,
+  FaGithub,
+  FaEnvelope,
+  FaFacebookF,
+  FaWhatsapp,
+  FaPeopleGroup,
+};
+
+export interface SocialLink {
+  href: string;
+  icon: IconType;
+  label: string;
+}
+
+export const socialLinks: SocialLink[] = PERSONA.socials.map((s) => ({
+  href: s.href,
+  icon: ICONS[s.icon],
+  label: s.label,
+}));
