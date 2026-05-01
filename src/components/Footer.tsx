@@ -102,7 +102,7 @@ export async function Footer() {
             <h4 className="text-xs font-semibold uppercase tracking-[0.18em] text-text-muted">
               {t("connectHeading")}
             </h4>
-            <div className="mt-4 flex flex-wrap gap-2">
+            <div className="mt-4 flex flex-wrap justify-start gap-2 md:justify-center">
               {socialLinks.map((link) => (
                 <a
                   key={link.href}
