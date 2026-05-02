@@ -273,10 +273,6 @@ export function ChatWidget({ open, onClose }: ChatWidgetProps) {
             {messages.map((m, i) => (
               <MessageBubble key={i} role={m.role} content={m.content} />
             ))}
-            {streaming &&
-              messages[messages.length - 1]?.content === "" && (
-                <MessageBubble role="assistant" content="…" />
-              )}
 
             {showSuggestions && (
               <div className="flex flex-wrap gap-2 pt-2">
