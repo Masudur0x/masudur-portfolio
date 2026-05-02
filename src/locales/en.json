@@ -279,9 +279,9 @@
     "whatsappHint": "Direct to Masudur"
   },
   "chat": {
-    "title": "Masudur's AI",
+    "title": "Masudur",
     "subtitle": "Usually replies instantly",
-    "greeting": "Hey, I'm Masudur's AI — ask me anything about voice agents, n8n, pricing, or how he'd approach your problem.",
+    "greeting": "Hey — what's on your mind? Trying to automate something, or just curious how I work?",
     "suggested": [
       "How much for a voice agent?",
       "Show me a case study",

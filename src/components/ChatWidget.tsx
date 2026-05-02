@@ -231,7 +231,7 @@ export function ChatWidget({ open, onClose }: ChatWidgetProps) {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 16, scale: 0.98 }}
           transition={{ type: "spring", stiffness: 300, damping: 28 }}
-          className="fixed bottom-6 right-6 z-50 flex h-[560px] w-[380px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0f] text-white shadow-2xl shadow-black/60 sm:bottom-8 sm:right-8"
+          className="fixed bottom-3 right-3 z-50 flex h-[min(640px,calc(100dvh-6rem))] w-[min(380px,calc(100vw-1.5rem))] flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0f] text-white shadow-2xl shadow-black/60 sm:bottom-8 sm:right-8"
           role="dialog"
           aria-label={t("title")}
         >
@@ -383,15 +383,30 @@ function MessageBubble({
   content: string;
 }) {
   const isUser = role === "user";
+  if (isUser) {
+    return (
+      <div className="flex justify-end">
+        <div className="max-w-[80%] whitespace-pre-wrap rounded-2xl rounded-br-md bg-cyan-400 px-3.5 py-2 text-sm leading-relaxed text-black">
+          {content || "…"}
+        </div>
+      </div>
+    );
+  }
   return (
-    <div className={`flex ${isUser ? "justify-end" : "justify-start"}`}>
-      <div
-        className={
-          isUser
-            ? "max-w-[85%] whitespace-pre-wrap rounded-2xl rounded-br-md bg-cyan-400 px-3.5 py-2 text-sm leading-relaxed text-black"
-            : "max-w-[85%] whitespace-pre-wrap rounded-2xl rounded-bl-md border border-white/10 bg-white/[0.04] px-3.5 py-2 text-sm leading-relaxed text-white/90"
-        }
+    <div className="flex justify-start gap-2">
+      <span
+        aria-hidden
+        className="mt-0.5 h-7 w-7 shrink-0 overflow-hidden rounded-full ring-1 ring-cyan-400/30"
       >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/headshot.png"
+          alt=""
+          className="h-full w-full object-cover"
+          draggable={false}
+        />
+      </span>
+      <div className="max-w-[82%] whitespace-pre-wrap rounded-2xl rounded-bl-md border border-white/10 bg-white/[0.04] px-3.5 py-2 text-sm leading-relaxed text-white/90">
         {content || "…"}
       </div>
     </div>
