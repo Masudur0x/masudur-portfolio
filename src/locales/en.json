@@ -9,7 +9,8 @@
     "contact": "Contact",
     "bookCall": "Book a Call",
     "openMenu": "Open menu",
-    "closeMenu": "Close menu"
+    "closeMenu": "Close menu",
+    "preferences": "Preferences"
   },
   "hero": {
     "headlineLead": "24/7 AI that handles",
