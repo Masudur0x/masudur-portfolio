@@ -46,9 +46,10 @@ html[lang="bn"] h6 {
 
 html {
   scroll-behavior: smooth;
-  /* Anchor links land below the fixed navbar (~76px) instead of behind it.
-     Extra room avoids the title sitting flush under the bar. */
-  scroll-padding-top: 7.5rem;
+  /* Match the fixed navbar height (~76px) so anchored sections begin
+     cleanly under the bar with no slice of the previous section showing.
+     Each section's own py-* padding handles spacing before the heading. */
+  scroll-padding-top: 5rem;
 }
 
 /* Scrollbar */
