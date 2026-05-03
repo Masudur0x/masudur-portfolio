@@ -81,7 +81,18 @@ export function Navbar() {
             </a>
           </div>
 
-          {/* Mobile hamburger */}
+          {/* Tablet "Book a Call" — sits in the top bar between sm and lg
+              so tablet users don't have to open the drawer to book. */}
+          <a
+            href={PERSONA.contact.calendar}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-auto mr-3 hidden rounded-lg bg-amber px-4 py-2 text-sm font-medium text-bg transition-all hover:bg-amber-dark active:scale-[0.97] sm:inline-flex lg:hidden"
+          >
+            {t("bookCall")}
+          </a>
+
+          {/* Hamburger (visible below lg) */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="relative z-[70] flex h-10 w-10 items-center justify-center lg:hidden"
