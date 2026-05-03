@@ -42,7 +42,7 @@ export async function FAQs() {
 
       <div className="mx-auto max-w-3xl divide-y divide-border-card overflow-hidden rounded-2xl border border-border-card bg-bg-card">
         {items.map((item, i) => (
-          <details key={i} className="group" open={i < 2}>
+          <details key={i} className="group">
             <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-5 sm:p-6 transition-colors hover:bg-bg/40">
               <span className="text-base font-medium text-text sm:text-lg">
                 {item.q}
