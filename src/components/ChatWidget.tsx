@@ -231,7 +231,7 @@ export function ChatWidget({ open, onClose }: ChatWidgetProps) {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 16, scale: 0.98 }}
           transition={{ type: "spring", stiffness: 300, damping: 28 }}
-          className="fixed bottom-3 right-3 z-50 flex h-[min(640px,calc(100dvh-6rem))] w-[min(380px,calc(100vw-1.5rem))] flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a0f] text-white shadow-2xl shadow-black/60 sm:bottom-8 sm:right-8"
+          className="fixed inset-x-0 bottom-0 z-50 flex h-[85dvh] w-full flex-col overflow-hidden rounded-t-2xl border-x-0 border-b-0 border-t border-white/10 bg-[#0a0a0f] text-white shadow-2xl shadow-black/60 sm:inset-x-auto sm:bottom-8 sm:right-8 sm:h-[640px] sm:w-[380px] sm:rounded-2xl sm:border"
           role="dialog"
           aria-label={t("title")}
         >

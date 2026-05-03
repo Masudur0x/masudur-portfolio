@@ -184,7 +184,7 @@ export function Contact() {
             <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-text-muted">
               {t("findOnline")}
             </h3>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap justify-center gap-3 sm:justify-start">
               {socialLinks.map((social) => (
                 <a
                   key={social.href}
