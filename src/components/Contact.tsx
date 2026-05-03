@@ -50,7 +50,7 @@ export function Contact() {
   const calendarHref = PERSONA.contact.calendar;
 
   return (
-    <Section id="contact" className="bg-bg-card/30 section-glow">
+    <Section id="contact" className="section-glow">
       <div className="mx-auto max-w-4xl">
         <SectionHeading>{t("heading")}</SectionHeading>
         <p className="mb-8 sm:mb-12 max-w-[55ch] text-base sm:text-lg text-text-muted leading-relaxed">

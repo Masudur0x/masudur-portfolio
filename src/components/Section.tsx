@@ -10,7 +10,7 @@ export function Section({ id, children, className = "" }: SectionProps) {
   return (
     <section
       id={id}
-      className={`px-5 py-10 sm:px-6 sm:py-14 md:py-20 lg:py-28 ${className}`}
+      className={`px-5 py-10 sm:px-6 sm:py-14 md:py-20 lg:py-20 ${className}`}
     >
       <div className="mx-auto max-w-6xl">{children}</div>
     </section>
