@@ -52,7 +52,7 @@ export async function Hero() {
               {t("headlineLead")}
               <br />
               {headlineCue}{" "}
-              <span className="inline-block min-w-[5ch] text-amber">
+              <span className="inline-block min-w-[7ch] text-left text-amber">
                 <HeroTypingWord phrases={phrases} />
               </span>
               {headlineTrail && <> {headlineTrail}</>}
@@ -89,7 +89,7 @@ export async function Hero() {
               {t("headlineLead")}
               <br />
               {headlineCue}{" "}
-              <span className="inline-block min-w-[5ch] text-left text-amber">
+              <span className="inline-block min-w-[7ch] text-left text-amber">
                 <HeroTypingWord phrases={phrases} />
               </span>
               {headlineTrail && <> {headlineTrail}</>}
