@@ -1,9 +1,8 @@
 import Image from "next/image";
-import { FaMicrophone } from "react-icons/fa6";
+import { FaWhatsapp, FaCalendarCheck } from "react-icons/fa6";
 import { getTranslations } from "next-intl/server";
 import { PERSONA } from "@/lib/persona";
 import { HeroTypingWord } from "./HeroTypingWord";
-import { VoiceCallButton } from "./VoiceCallButton";
 
 export async function Hero() {
   const t = await getTranslations("hero");
@@ -11,17 +10,6 @@ export async function Hero() {
   const headshotAlt = t("headshotAlt");
   const headlineCue = t("headlineCue");
   const headlineTrail = t("headlineTrail");
-
-  const voiceBtnInner = (
-    <>
-      <span className="relative flex h-2 w-2">
-        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-bg/60 opacity-75" />
-        <span className="relative inline-flex h-2 w-2 rounded-full bg-bg" />
-      </span>
-      <FaMicrophone className="h-3.5 w-3.5" />
-      {t("talkLive")}
-    </>
-  );
 
   return (
     <section className="relative flex min-h-0 md:min-h-[100dvh] items-center overflow-hidden px-6 pt-28 pb-12 md:pt-24 md:pb-16">
@@ -61,16 +49,23 @@ export async function Hero() {
               {t("subheadMobile")}
             </p>
             <div className="flex flex-col gap-3">
-              <VoiceCallButton className="group inline-flex w-full items-center justify-center gap-2 rounded-lg bg-amber px-6 py-3 font-medium text-bg transition-all hover:bg-amber-dark active:scale-[0.98]">
-                {voiceBtnInner}
-              </VoiceCallButton>
               <a
                 href={PERSONA.contact.calendar}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-full items-center justify-center rounded-lg border border-border-card px-6 py-3 font-medium text-text transition-all hover:border-text-muted hover:text-text-strong active:scale-[0.98]"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-amber px-6 py-3 font-semibold text-bg shadow-lg shadow-amber/20 transition-all hover:bg-amber-dark hover:shadow-amber/30 active:scale-[0.98]"
               >
+                <FaCalendarCheck className="h-4 w-4" />
                 {t("bookCall")}
+              </a>
+              <a
+                href={PERSONA.contact.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-emerald-400/30 bg-emerald-400/10 px-6 py-3 font-medium text-emerald-300 transition-all hover:bg-emerald-400/20 active:scale-[0.98]"
+              >
+                <FaWhatsapp className="h-4 w-4" />
+                {t("whatsapp")}
               </a>
               <a
                 href="#projects"
@@ -98,16 +93,23 @@ export async function Hero() {
               {t("subheadDesktop")}
             </p>
             <div className="flex flex-wrap gap-3">
-              <VoiceCallButton className="group inline-flex items-center gap-2 rounded-lg bg-amber px-6 py-3 font-medium text-bg transition-all hover:bg-amber-dark active:scale-[0.98]">
-                {voiceBtnInner}
-              </VoiceCallButton>
               <a
                 href={PERSONA.contact.calendar}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-lg border border-border-card px-6 py-3 font-medium text-text transition-all hover:border-text-muted hover:text-text-strong active:scale-[0.98]"
+                className="inline-flex items-center gap-2 rounded-lg bg-amber px-6 py-3 font-semibold text-bg shadow-lg shadow-amber/20 transition-all hover:bg-amber-dark hover:shadow-amber/30 active:scale-[0.98]"
               >
+                <FaCalendarCheck className="h-4 w-4" />
                 {t("bookCall")}
+              </a>
+              <a
+                href={PERSONA.contact.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border border-emerald-400/30 bg-emerald-400/10 px-6 py-3 font-medium text-emerald-300 transition-all hover:bg-emerald-400/20 active:scale-[0.98]"
+              >
+                <FaWhatsapp className="h-4 w-4" />
+                {t("whatsapp")}
               </a>
               <a
                 href="#projects"

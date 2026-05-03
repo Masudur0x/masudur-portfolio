@@ -13,7 +13,8 @@
     "bookCall": "কল বুক করুন",
     "openMenu": "মেন্যু খুলুন",
     "closeMenu": "মেন্যু বন্ধ করুন",
-    "preferences": "প্রেফারেন্স"
+    "preferences": "প্রেফারেন্স",
+    "whatsapp": "WhatsApp"
   },
   "hero": {
     "headlineLead": "২৪/৭ AI যা সামলে নেয়",
@@ -24,6 +25,7 @@
     "subheadMobile": "যেই কাজ ব্যবসার গতি কমায় সেগুলো অটোমেট করতে সাহায্য করি — ওয়ার্কফ্লো অটোমেশন থেকে ভয়েস AI পর্যন্ত।",
     "talkLive": "আমার AI-এর সাথে কথা বলুন · লাইভ",
     "bookCall": "কল বুক করুন",
+    "whatsapp": "WhatsApp",
     "seeWork": "কাজ দেখুন",
     "headshotAlt": "মাসুদুর রহমান"
   },

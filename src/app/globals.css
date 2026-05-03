@@ -46,8 +46,9 @@ html[lang="bn"] h6 {
 
 html {
   scroll-behavior: smooth;
-  /* Anchor links land below the fixed navbar (~76px) instead of behind it. */
-  scroll-padding-top: 6rem;
+  /* Anchor links land below the fixed navbar (~76px) instead of behind it.
+     Extra room avoids the title sitting flush under the bar. */
+  scroll-padding-top: 7.5rem;
 }
 
 /* Scrollbar */

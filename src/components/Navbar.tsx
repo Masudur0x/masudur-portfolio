@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
-import { FaXmark, FaArrowRight } from "react-icons/fa6";
+import { FaXmark, FaArrowRight, FaWhatsapp } from "react-icons/fa6";
 import { PERSONA } from "@/lib/persona";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { ThemeToggle } from "./ThemeToggle";
@@ -57,7 +57,7 @@ export function Navbar() {
           </a>
 
           {/* Desktop nav */}
-          <div className="hidden items-center gap-6 md:flex">
+          <div className="hidden items-center gap-6 lg:flex">
             {links.map((link) => (
               <a
                 key={link.href}
@@ -84,7 +84,7 @@ export function Navbar() {
           {/* Mobile hamburger */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="relative z-[70] flex h-10 w-10 items-center justify-center md:hidden"
+            className="relative z-[70] flex h-10 w-10 items-center justify-center lg:hidden"
             aria-label={isOpen ? t("closeMenu") : t("openMenu")}
             aria-expanded={isOpen}
           >
@@ -115,7 +115,7 @@ export function Navbar() {
         aria-modal="true"
         aria-hidden={!isOpen}
         aria-label="Mobile navigation"
-        className={`fixed inset-0 z-[65] flex flex-col bg-bg md:hidden ${
+        className={`fixed inset-0 z-[65] flex flex-col bg-bg lg:hidden ${
           isOpen
             ? "pointer-events-auto opacity-100 transition-opacity duration-200"
             : "pointer-events-none opacity-0 transition-opacity duration-200"
@@ -168,16 +168,28 @@ export function Navbar() {
               <ThemeToggle />
             </div>
           </div>
-          <a
-            href={PERSONA.contact.calendar}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setIsOpen(false)}
-            className="flex w-full items-center justify-center gap-2 rounded-lg bg-amber px-6 py-3.5 text-base font-semibold text-bg shadow-md shadow-amber/20 transition-all hover:bg-amber-dark active:scale-[0.98]"
-          >
-            {t("bookCall")}
-            <FaArrowRight className="h-3.5 w-3.5" />
-          </a>
+          <div className="grid grid-cols-2 gap-3">
+            <a
+              href={PERSONA.contact.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsOpen(false)}
+              className="flex w-full items-center justify-center gap-2 rounded-lg border border-emerald-400/30 bg-emerald-400/10 px-4 py-3.5 text-base font-semibold text-emerald-300 transition-all hover:bg-emerald-400/20 active:scale-[0.98]"
+            >
+              <FaWhatsapp className="h-4 w-4" />
+              {t("whatsapp")}
+            </a>
+            <a
+              href={PERSONA.contact.calendar}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsOpen(false)}
+              className="flex w-full items-center justify-center gap-2 rounded-lg bg-amber px-4 py-3.5 text-base font-semibold text-bg shadow-md shadow-amber/20 transition-all hover:bg-amber-dark active:scale-[0.98]"
+            >
+              {t("bookCall")}
+              <FaArrowRight className="h-3.5 w-3.5" />
+            </a>
+          </div>
         </div>
       </div>
     </>
