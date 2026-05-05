@@ -398,7 +398,7 @@ function MessageBubble({
   if (isUser) {
     return (
       <div className="flex justify-end">
-        <div className="max-w-[80%] whitespace-pre-wrap rounded-2xl rounded-br-md bg-cyan-400 px-3.5 py-2 text-sm leading-relaxed text-black">
+        <div className="max-w-[80%] whitespace-pre-wrap break-words rounded-2xl rounded-br-md bg-cyan-400 px-3.5 py-2 text-sm leading-relaxed text-black">
           {content || "…"}
         </div>
       </div>
@@ -418,9 +418,38 @@ function MessageBubble({
           draggable={false}
         />
       </span>
-      <div className="max-w-[82%] whitespace-pre-wrap rounded-2xl rounded-bl-md border border-white/10 bg-white/[0.04] px-3.5 py-2 text-sm leading-relaxed text-white/90">
-        {content || "…"}
+      <div className="max-w-[82%] min-w-0 whitespace-pre-wrap break-words rounded-2xl rounded-bl-md border border-white/10 bg-white/[0.04] px-3.5 py-2 text-sm leading-relaxed text-white/90 [overflow-wrap:anywhere]">
+        {content ? <Linkified text={content} /> : "…"}
       </div>
     </div>
+  );
+}
+
+// Convert URLs in plain text into clickable links.
+const URL_REGEX = /(https?:\/\/[^\s<>"']+)/g;
+
+function Linkified({ text }: { text: string }) {
+  const parts = text.split(URL_REGEX);
+  return (
+    <>
+      {parts.map((part, i) => {
+        if (URL_REGEX.test(part)) {
+          // Reset lastIndex because we used the global regex in split
+          URL_REGEX.lastIndex = 0;
+          return (
+            <a
+              key={i}
+              href={part}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-cyan-300 underline decoration-cyan-300/40 underline-offset-2 transition hover:text-cyan-200 hover:decoration-cyan-200"
+            >
+              {part}
+            </a>
+          );
+        }
+        return <span key={i}>{part}</span>;
+      })}
+    </>
   );
 }
