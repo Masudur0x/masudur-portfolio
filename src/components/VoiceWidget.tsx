@@ -144,7 +144,7 @@ export function VoiceWidget({ open, onClose }: VoiceWidgetProps) {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 16, scale: 0.98 }}
           transition={{ type: "spring", stiffness: 300, damping: 28 }}
-          className="fixed bottom-6 right-6 z-50 flex w-[380px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-2xl border border-amber/30 bg-bg text-text shadow-2xl shadow-black/60 sm:bottom-8 sm:right-8"
+          className="fixed inset-x-3 bottom-3 z-50 flex max-h-[calc(100dvh-8rem)] flex-col overflow-hidden rounded-2xl border border-amber/30 bg-bg text-text shadow-2xl shadow-black/60 sm:inset-x-auto sm:bottom-8 sm:right-8 sm:w-[380px] sm:max-w-[calc(100vw-2rem)]"
           role="dialog"
           aria-label={t("title")}
         >
