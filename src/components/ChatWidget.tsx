@@ -101,6 +101,22 @@ export function ChatWidget({ open, onClose }: ChatWidgetProps) {
       const controller = new AbortController();
       abortRef.current = controller;
 
+      // Humanized "is typing..." pause before the reply starts streaming,
+      // randomized 1.1s–2.1s so it doesn't feel mechanically uniform.
+      const typingDelayMs = 1100 + Math.floor(Math.random() * 1000);
+      await new Promise<void>((resolve) => {
+        const t = setTimeout(resolve, typingDelayMs);
+        controller.signal.addEventListener("abort", () => {
+          clearTimeout(t);
+          resolve();
+        });
+      });
+      if (controller.signal.aborted) {
+        setStreaming(false);
+        abortRef.current = null;
+        return;
+      }
+
       try {
         const res = await fetch("/api/chat", {
           method: "POST",
